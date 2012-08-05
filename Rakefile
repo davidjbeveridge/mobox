@@ -23,14 +23,15 @@ end
 ROOT              = Pathname(File.dirname(__FILE__))
 LOGGER            = Logger.new(STDOUT)
 BUNDLES           = %w[ application.css application.js ]
-BUILD_DIR         = ROOT.join("public")
+BUILD_DIR         = ROOT.join("www")
 SOURCE_DIR        = ROOT.join("src")
 ASSETS_SOURCE_DIR = SOURCE_DIR.join "assets"
 
 namespace :build do
   
-  desc "Clean public directory"
+  desc "Clean www directory"
   task :clean do
+    FileUtils.mkdir_p BUILD_DIR
     Dir.glob File.join(BUILD_DIR, "**", "*") do |path|
       puts path
       FileUtils.rm_rf path if File.exist? path
@@ -39,6 +40,8 @@ namespace :build do
   
   desc "Compile static assets"
   task :assets do
+    FileUtils.mkdir_p BUILD_DIR
+    
     sprockets = Sprockets::Environment.new(SOURCE_DIR) do |env|
       env.logger = Logger.new(STDOUT)
     end
@@ -76,8 +79,10 @@ namespace :build do
         include Mobox::Helpers
       end
       
-      
-      File.delete File.join(BUILD_DIR, "index.html") if File.exist? File.join(BUILD_DIR, "index.html")
+      FileUtils.mkdir_p BUILD_DIR
+      if File.exist? File.join(BUILD_DIR, "index.html")
+        File.delete File.join(BUILD_DIR, "index.html")
+      end
       File.open(File.join(BUILD_DIR, "index.html"), "w") do |file|
         file.write Haml::Engine.new( File.open(File.join(SOURCE_DIR, "index.haml")).read ).render(render_scope)
         file.close
@@ -87,6 +92,8 @@ namespace :build do
   
   desc "Copy images into build directory"
   task :images do
+    FileUtils.mkdir_p BUILD_DIR
+    
     img_build_dir = File.join(BUILD_DIR, "images")
     img_src_dir = File.join(SOURCE_DIR, "images")
     FileUtils.mkdir_p img_build_dir

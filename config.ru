@@ -25,7 +25,7 @@ end
 ROOT              = Pathname(File.dirname(__FILE__))
 LOGGER            = Logger.new(STDOUT)
 BUNDLES           = %w[ application.css application.js ]
-BUILD_DIR         = ROOT.join("public")
+BUILD_DIR         = ROOT.join("www")
 SOURCE_DIR        = ROOT.join("src")
 ASSETS_SOURCE_DIR = SOURCE_DIR.join "assets"
 
