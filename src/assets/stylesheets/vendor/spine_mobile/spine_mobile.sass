@@ -1,0 +1,57 @@
+@import './mixin'
+@import 'compass/css3/images'
+@import 'compass/css3/box-shadow'
+@import 'compass/css3/text-shadow'
+
+$headerHeight: 44px
+$footerHeight: 44px
+
+body, html
+  height: 100%
+  width: 100%
+  
+.viewport
+  position: relative
+  +background( radial-gradient( color-stops(#fff, #f1f1f1, #ddd), center -10% ) )
+  
+  > *
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    
+    &:not(.active)
+      display: none
+      
+body.stage 
+  > header
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+
+  > article
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    
+  > footer
+    position: fixed
+    left: 0
+    bottom: 0
+    right: 0
+
+.panel
+  +vbox()
+
+  > article
+    +box-flex(1)
+    padding-top: $headerHeight
+    padding-bottom: $footerHeight
+    overflow: auto
+    //-webkit-overflow-scrolling: touch
+    
+@import './theme'

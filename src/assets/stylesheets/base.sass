@@ -1,0 +1,78 @@
+$primaryFontColor: #fff
+$background: #6AAB6B
+
+@mixin mobile
+  @media handheld, only screen and (max-width: 767px)
+    @content
+
+@mixin tablet
+  @media only screen and (min-width: 768px) and (max-width: 1023px)
+    @content
+
+@mixin desktop
+  @media only screen and (min-width: 1024px)
+    @content
+
+body
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: $primaryFontColor
+  background: $background
+  h1,h2,h3,h4,h5,h6
+    font-weight: 600
+  h1
+    font-size: 3em
+    line-height: 1.4
+    margin-bottom: 40px
+  h2
+    font-size: 2.3em
+    line-height: 1.4
+    margin-bottom: 40px
+  h3
+    font-size: 1.6em
+    color: $primaryFontColor + #777
+    margin-bottom: 20px
+    +text-shadow(1px 1px 0 $primaryFontColor)
+  h4
+    font-size: 1.2em
+    margin-bottom: 20px
+  h5
+    font-size: 1em
+    font-family: Arial, sans-serif
+    text-transform: uppercase
+    margin-bottom: 20px
+  h6
+    font-size: 0.85em
+    text-transform: uppercase
+    margin-bottom: 20px
+    color: $primaryFontColor + #777
+    +text-shadow(1px 1px 0 $primaryFontColor)
+    
+
++mobile
+  h1,h2,h3,h4,h5,h6
+    margin-bottom: 10px !important
+
+
+#homescreen
+  margin-top: 10%
+  h1
+    font-size: 500%
+    margin-bottom: 0
+    +mobile
+      font-size: 400%
+  p
+    margin-bottom: 4%
+  img
+    -webkit-transition: -webkit-transform 0.4s linear
+    &.flipped
+      -webkit-transition: -webkit-transform 0.4s linear
+      -webkit-transform: perspective(300px) rotateY(180deg)
+    +desktop
+      max-width: 200px
+    +mobile
+      max-width: 150px
+    +tablet
+      max-width: 200px
+
+.center-text
+  text-align: center
