@@ -1,3 +1,4 @@
+#= require vendor/cordova-2.0.0
 #= require vendor/1140gs/css3-mediaqueries
 
 #= require vendor/jquery

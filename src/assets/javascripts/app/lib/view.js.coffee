@@ -8,7 +8,10 @@ class App.View
   
 ViewMethods =
   view: (path, locals) ->
-    JST["javascripts/app/views/#{path}"](new App.View(@, locals))
+    if "function" is typeof JST["javascripts/app/views/#{path}"]
+      JST["javascripts/app/views/#{path}"](new App.View(@, locals))
+    else
+      JST["app/views/#{path}"](new App.View(@, locals))
 
 Spine.Controller.include ViewMethods
 Panel.include ViewMethods
