@@ -142,8 +142,8 @@ namespace :phonegap do
   
   namespace :ios do
     
-    desc "Build assets into ios App"
-    task :build => ["build:all"] do
+    desc "Clean ios/www"
+    task :clean do
       print "Cleaning ios/www... "
       keep = %w[res/* config.xml]
       Dir.glob(ROOT.join('ios', 'www', '**', '*')).each do |filename|
@@ -153,6 +153,10 @@ namespace :phonegap do
         end
       end
       puts "done."
+    end
+    
+    desc "Build assets into ios App"
+    task :build => ["build:all", :clean] do
       
       print "Copying static assets to ios/www... "
       FileUtils.cp_r Dir[BUILD_DIR.join('*')], ROOT.join('ios', 'www')
@@ -163,6 +167,19 @@ namespace :phonegap do
       puts "done."
     end
     
+  end
+  
+  namespace :android do
+    
+    task :build do
+      # Rough cut
+      # Check if emulator is running
+      #   if running
+      #     build app
+      #     launch app
+      #   else
+      #     complain at user
+    end
   end
   
 end
