@@ -1,9 +1,0 @@
-public
-www
-.sass-cache
-.sass-cache/*
-log
-tmp
-ios
-android
-console.log
