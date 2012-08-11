@@ -1,6 +1,10 @@
 Dir.glob( File.expand_path( File.join('..', 'vendor', '*', 'lib'), File.dirname(__FILE__) ) ) do |path|
-  $:.unshift path
+  unless path.match /phonegap/
+    puts path
+    $:.unshift path
+  end
 end
+
 
 require "rubygems" # ruby1.9 doesn't "require" it though
 require 'bundler'
