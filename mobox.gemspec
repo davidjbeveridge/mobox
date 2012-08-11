@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "mobox"
-  gem.require_paths = ["lib"]
+  gem.require_paths = %w[lib vendor]
   gem.version       = Mobox::VERSION
   
   gem.add_dependency "rack"

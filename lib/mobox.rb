@@ -1,8 +1,6 @@
 Dir.glob( File.expand_path( File.join('..', 'vendor', '*', 'lib'), File.dirname(__FILE__) ) ) do |path|
-  unless path.match /phonegap/
-    puts path
-    $:.unshift path
-  end
+  STDOUT.puts path
+  $:.unshift path
 end
 
 
