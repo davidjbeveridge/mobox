@@ -4,27 +4,33 @@ Mobile app prototype in a box.
 
 Mobox is intended to serve as a starting place for manufacturing a mobile app using a simple toolset: Haml, Sass, and CoffeeScript.
 It lets you develop client-side web apps quickly without getting in the way, and takes care of the heavy lifting by assembling
-everything w/ Sprockets
-
+everything w/ Sprockets and Phonegap.
 
 ### What's included?
 
-Mobox includes the tools that David Beveridge finds easiest to work with, including:
+Mobox includes the tools that I (David Beveridge) find easiest to work with, including:
 
-* Cordova (Phonegap) 2.0.0
-* Haml for your homepage
-* Sass for styles
-  - 1140 Fluid Grid for layout
-  - Compass for all that CSS3 goodness
-* CoffeeScript
-  - jQuery, because you can't live without it.
-  - Spine.js for some structure in your JS
-    + Spine Mobile, if you're into that
-  - Haml-JS for client-side templates
-  - GFX & jQuery Transit for hardware-accelerated animation
-  - Hammer.js for multi-touch events
+* [Phonegap](http://phonegap.com/) (Cordova) 2.0.0
+* [Haml](http://haml.info/) for your homepage
+* [Sass](http://sass-lang.com/) for styles
+  - [1140 Grid](http://cssgrid.net/) for fluid layout
+  - [Compass](http://compass-style.org/) for all that CSS3 goodness
+* [CoffeeScript](http://coffeescript.org/)
+  - [jQuery](http://jquery.com/), because you can't live without it.
+  - [Spine.js](http://spinejs.com/) for some structure in your JS
+    + [Spine Mobile](http://spinejs.com/mobile), if you're into that
+  - [Haml-JS](https://github.com/creationix/haml-js/) for client-side templates
+  - [GFX](http://maccman.github.com/gfx/) & [jQuery Transit](http://ricostacruz.com/jquery.transit/) for hardware-accelerated animation
+  - [Hammer.js](http://eightmedia.github.com/hammer.js/) for multi-touch events
   
-Mobox is also a build tool for your app, and can assemble the web, iOS, and Android versions.
+Mobox is also a **build tool** for your app, and can assemble the web, iOS, and Android versions.
+
+### What's not included?
+
+* App Design
+* Marketing
+* Deployment
+* Profitability
 
 ### Prerequisites
 
