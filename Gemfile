@@ -1,16 +1,4 @@
-# A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rack"
-gem "thor"
-gem "sprockets"
-gem "sprockets-sass"
-gem "thin"
-gem "coffee-script"
-gem "sass", "~>3.2.0.alpha.277"
-gem "compass"
-gem "haml"
-gem "guard"
-gem "guard-haml"
-gem "foreman"
-gem "json"
+# Specify your gem's dependencies in mobox.gemspec
+gemspec

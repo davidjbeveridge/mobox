@@ -1,26 +1,17 @@
-GIT
-  remote: git://github.com/davidjbeveridge/haml-sprockets.git
-  revision: 146a36282cafb0cf8a293fd7f4ce31c81c33a378
+PATH
+  remote: .
   specs:
-    haml-sprockets (0.0.7)
-      execjs (~> 1.3.0)
-      sprockets (~> 2.1)
-      tilt (~> 1.3)
-
-GIT
-  remote: git://github.com/heygrady/compass-sprockets.git
-  revision: 8b15fd985b7a9b222eaabd5f78e690b0fc9a6f1b
-  specs:
-    compass-sprockets (0.0.0)
+    mobox (0.0.1)
+      coffee-script
       compass
+      haml
+      json
+      rack
+      sass (~> 3.2.0.alpha.277)
       sprockets
-
-GIT
-  remote: git://github.com/maccman/ruby-stylus.git
-  revision: a810855410805865bb1464b326fe65822f792ceb
-  specs:
-    stylus (0.3.0.pre)
-      execjs
+      sprockets-sass
+      thin
+      thor
 
 GEM
   remote: https://rubygems.org/
@@ -34,35 +25,17 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    daemons (1.1.8)
+    daemons (1.1.9)
     eventmachine (0.12.10)
-    execjs (1.3.2)
+    execjs (1.4.0)
       multi_json (~> 1.0)
-    ffi (1.1.4)
-    foreman (0.53.0)
-      thor (>= 0.13.6)
     fssm (0.2.9)
-    guard (1.3.0)
-      listen (>= 0.4.2)
-      thor (>= 0.14.6)
-    guard-haml (0.4)
-      guard (>= 1.1)
-      haml (>= 3.0)
     haml (3.1.6)
     hike (1.2.1)
     json (1.7.4)
-    listen (0.4.7)
-      rb-fchange (~> 0.0.5)
-      rb-fsevent (~> 0.9.1)
-      rb-inotify (~> 0.8.8)
     multi_json (1.3.6)
     rack (1.4.1)
-    rb-fchange (0.0.5)
-      ffi
-    rb-fsevent (0.9.1)
-    rb-inotify (0.8.8)
-      ffi (>= 0.5.0)
-    sass (3.2.0.alpha.278)
+    sass (3.2.0)
     sprockets (2.4.5)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -82,19 +55,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-script
-  compass
-  compass-sprockets!
-  foreman
-  guard
-  guard-haml
-  haml
-  haml-sprockets!
-  json
-  rack
-  sass (~> 3.2.0.alpha.277)
-  sprockets
-  sprockets-sass
-  stylus!
-  thin
-  thor
+  mobox!
