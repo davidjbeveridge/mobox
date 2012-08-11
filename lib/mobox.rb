@@ -1,5 +1,4 @@
 Dir.glob( File.expand_path( File.join('..', 'vendor', '*', 'lib'), File.dirname(__FILE__) ) ) do |path|
-  STDOUT.puts path
   $:.unshift path
 end
 
