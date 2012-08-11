@@ -1,5 +1,3 @@
-require File.expand_path('../config', __FILE__)
-
 module Mobox
   module Helpers
 

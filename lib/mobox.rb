@@ -27,6 +27,7 @@ $:.unshift File.dirname(__FILE__)
 require 'mobox/config'
 require 'mobox/helpers'
 require 'mobox/render_scope'
+require 'mobox/server'
 
 module Mobox
 end

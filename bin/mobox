@@ -102,7 +102,7 @@ namespace :build do
       task :html => :locate_root do
         print "Building index.html... "
         if(File.exist?(WWW_SOURCE_DIR.join("index.haml")))
-          render_scope = Mobox::RenderScope.new
+          render_scope = Mobox::RenderScope.new(WWW_SOURCE_DIR)
           FileUtils.mkdir_p WWW_BUILD_DIR
           if File.exist? WWW_BUILD_DIR.join("index.html")
             File.delete WWW_BUILD_DIR.join("index.html")
@@ -264,7 +264,9 @@ namespace :build do
 end
 
 desc "Run server on 0.0.0.0:3000"
-task :server
+task :server => :locate_root do
+  Mobox::Server.new(PROJECT_ROOT).run!
+end
 
 task :default
 
