@@ -33,6 +33,7 @@ end
 
 def make_environment(platform, app_name, app_namespace)
   executable = MOBOX_ROOT.join('vendor', 'phonegap', 'lib', platform, 'bin', 'create')
+  FileUtils.mkdir_p platform_build_path(platform)
   `#{executable} #{platform_build_path(platform)} #{app_namespace} #{app_name}`
 end
 
