@@ -63,7 +63,15 @@ Running `mobox build:ios:create` will prompt you for a namespace and app name, w
 
 #### Android
 
+
     mobox build:android:create
+
+Before you can actually run the app, you must start your emulator (assuming you already set up an AVD with the Android SDK):
+
+    build/android/cordova/emulate
+
+Then you can build the app:
+
     mobox build:android
 
 Running `mobox build:android:create` will prompt you for a namespace and app name, which you must fill out in the correct format.
