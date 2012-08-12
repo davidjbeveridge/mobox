@@ -33,8 +33,7 @@ end
 
 def make_environment(platform, app_name, app_namespace)
   executable = MOBOX_ROOT.join('vendor', 'phonegap', 'lib', platform, 'bin', 'create')
-  FileUtils.mkdir_p platform_build_path(platform)
-  `#{executable} #{platform_build_path(platform)} #{app_namespace} #{app_name}`
+  puts `#{executable} #{platform_build_path(platform)} #{app_namespace} #{app_name}`
 end
 
 def platform_build_path(platform)
@@ -168,6 +167,7 @@ namespace :build do
       app_namespace = ask_user("Project namespace? [com.example.projectname]: ")
       app_name = ask_user("Project name? [MyApp]: ")
       print "Creating iOS build environment... "
+      FileUtils.mkdir_p platform_build_path('ios')
       make_environment('ios', app_name, app_namespace)
       puts "done."
     end
