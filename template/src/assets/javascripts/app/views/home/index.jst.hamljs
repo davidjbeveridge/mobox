@@ -1,8 +1,0 @@
-.wrapper
-  .row
-    .twelvecol.center-text
-      #homescreen
-        %img(src="images/mobox-logo.png")
-        %h1= config('appName')
-        %p= config('appDescription')
-        
